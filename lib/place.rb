@@ -6,5 +6,6 @@ class Place
   end
 
   def save
+    @@list.push(self)
   end
 end

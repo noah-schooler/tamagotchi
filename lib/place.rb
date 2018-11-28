@@ -1,7 +1,15 @@
 class Place
-  attr_accessor (:city)
+  attr_accessor(:city, :state)
+
   @@list = []
   @@next_id = 0
+
+  def initialize(city, state)
+    @id = @@next_id
+    @@next_id += 1
+    @city = city
+    @state = state
+  end
 
   def self.clear
     @@list = []
@@ -18,12 +26,6 @@ class Place
         return item
       end
     end
-  end
-
-  def initialize()
-    @id = @@next_id
-    @@next_id += 1
-    @city = ""
   end
 
   def save

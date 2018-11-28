@@ -1,1 +1,6 @@
-<p><%= @list %> </p>
+<h1>Places We've Been</h1>
+<ul>
+<% @places.each do |place| %>
+ <li><%= place %> </li>
+<% end %>
+</ul>

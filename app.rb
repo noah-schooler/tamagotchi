@@ -5,6 +5,6 @@ also_reload('lib/**/*.rb')
 require('pry')
 
 get('/') do
-  @list = "hello"
+  @places = Place.all()
   erb(:index)
 end

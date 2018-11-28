@@ -15,7 +15,7 @@ describe("Place") do
 
   describe(".clear") do
     it("clears the list array") do
-      place = Place.new()
+      place = Place.new("Houston", "Texas")
       place.save()
       Place.clear()
       expect(Place.all()).to(eq([]))
@@ -24,9 +24,9 @@ describe("Place") do
 
   describe(".find") do
     it("finds a place in the list array") do
-      place0 = Place.new()
+      place0 = Place.new("Houston", "Texas")
       place0.save()
-      place1 = Place.new()
+      place1 = Place.new("Sedona", "Arizona")
       place1.save()
       expect(Place.find(place0.id)).to(eq(place0))
     end
@@ -34,7 +34,7 @@ describe("Place") do
 
   describe("#save") do
     it("saves new place to class array") do
-      place = Place.new()
+      place = Place.new("Houston", "Texas")
       place.save()
       expect(Place.all()).to(eq([place]))
     end
@@ -42,7 +42,7 @@ describe("Place") do
 
   describe("#id") do
     it("adds a unique id to each place starting at 0") do
-      place = Place.new()
+      place = Place.new("Houston", "Texas")
       place.save()
       expect(place.id()).to(eq(0))
     end
@@ -50,9 +50,8 @@ describe("Place") do
 
   describe("#city") do
     it("returns the name of a city") do
-      place = Place.new()
+      place = Place.new("Houston", "Texas")
       place.save()
-      place.city = "Houston"
       expect(place.city).to(eq("Houston"))
     end
   end

@@ -39,7 +39,23 @@ class Place
     nil
   end
 
-  def self.order
+  def self.order(moved, new_rank)
+    old_rank = moved.rank
+    if new_rank < old_rank
+      @@list.each do |place|
+        if (place.rank < old_rank) && (place != moved)
+          place.rank += 1
+        end
+      end
+    else
+      @@list.each do |place|
+        if(place.rank <= new_rank) && (place != moved)
+          place.rank -= 1
+        end
+      end
+    end
+    moved.rank = new_rank
+    @@list.sort! { |a,b| a.rank <=> b.rank}
   end
 
   def save

@@ -82,8 +82,7 @@ describe("Place") do
       place1.save()
       place2.save()
       place3.save()
-      place2.rank = 1
-      Place.order
+      Place.order(place2, 1)
       expect(Place.find_rank(2)).to(eq(place1))
     end
   end

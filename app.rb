@@ -12,8 +12,9 @@ end
 post('/') do
   if(params['rank'])
     place = Place.find(params["id"].to_i)
-    place.rank = params['rank'].to_i
-  else
+    rank = params['rank'].to_i
+    Place.order(place, rank)
+  elsif(params['city'])
     city = params['city']
     state = params['state']
     description = params['description']

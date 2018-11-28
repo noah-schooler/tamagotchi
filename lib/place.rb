@@ -12,6 +12,11 @@ class Place
   end
 
   def self.find(id)
+    @@list.each do |item|
+      if id == item.id()
+        return item
+      end
+    end
   end
 
   def initialize()

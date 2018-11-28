@@ -8,4 +8,7 @@ class Place
   def save
     @@list.push(self)
   end
+
+  def self.clear
+  end
 end

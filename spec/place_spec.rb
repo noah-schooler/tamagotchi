@@ -17,4 +17,13 @@ describe("Place") do
     end
   end
 
+  describe(".clear") do
+    it("clears the list array") do
+      place = Place.new()
+      place.save()
+      Place.clear()
+      expect(Place.all()).to(eq([]))
+    end
+  end
+
 end

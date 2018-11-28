@@ -4,6 +4,7 @@ class Place
 
   def self.clear
     @@list = []
+    @@next_id = 0
   end
 
   def self.all()
@@ -20,5 +21,6 @@ class Place
   end
 
   def id
+    @id
   end
 end

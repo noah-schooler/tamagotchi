@@ -1,6 +1,6 @@
 require('sinatra')
 require('sinatra/reloader')
-require('./lib/places.rb')
+require('./lib/place.rb')
 also_reload('lib/**/*.rb')
 require('pry')
 

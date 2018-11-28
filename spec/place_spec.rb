@@ -1,11 +1,11 @@
 require ('rspec')
-require('places')
+require('place')
 require ('pry')
 
-describe("Places") do
+describe("Place") do
   describe(".all") do
     it("is empty at first") do
-      expect(Places.all()).to(eq([]))
+      expect(Place.all()).to(eq([]))
     end
   end
 

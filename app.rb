@@ -17,3 +17,11 @@ post('/') do
   @places = Place.all()
   erb(:index)
 end
+
+get('/cities/:id') do
+  # place = Place.new("Houston", "Texas")
+  # place.description = "The second best city in Texas"
+  # place.save()
+  @place = Place.find(0)
+  erb(:city)
+end

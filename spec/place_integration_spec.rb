@@ -27,13 +27,13 @@ describe('Places website') do
     end
   end
 
-  # describe('a unique view for each city', {:type => :feature}) do
-  #   it('displays a description for each city') do
-  #     place = Place.new("Houston", "Texas")
-  #     place.description = "The second best city in Texas"
-  #     place.save()
-  #     visit('city/0')
-  #     expect(page).to have_content("second best city")
-  #   end
-  # end
+  describe('a unique view for each city', {:type => :feature}) do
+    it('displays a description for each city') do
+      place = Place.new("Houston", "Texas")
+      place.description = "The second best city in Texas"
+      place.save()
+      visit('cities/0')
+      expect(page).to have_content("second best city")
+    end
+  end
 end

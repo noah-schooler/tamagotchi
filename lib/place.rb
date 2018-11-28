@@ -1,5 +1,5 @@
 class Place
-  attr_accessor(:city, :state)
+  attr_accessor(:city, :state, :description)
 
   @@list = []
   @@next_id = 0

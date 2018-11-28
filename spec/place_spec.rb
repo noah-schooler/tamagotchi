@@ -55,4 +55,13 @@ describe("Place") do
       expect(place.city).to(eq("Houston"))
     end
   end
+
+  describe("#description") do
+    it("returns the description of a city") do
+      place = Place.new("Houston", "Texas")
+      place.description = "The second best city in Texas"
+      place.save()
+      expect(place.description).to(eq("The second best city in Texas"))
+    end
+  end
 end

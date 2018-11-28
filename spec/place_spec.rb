@@ -22,6 +22,16 @@ describe("Place") do
     end
   end
 
+  describe(".find") do
+    it("finds a place in the list array") do
+      place0 = Place.new()
+      place0.save()
+      place1 = Place.new()
+      place1.save()
+      expect(Place.find(place0.id)).to(eq(place0))
+    end
+  end
+
   describe("#save") do
     it("saves new place to class array") do
       place = Place.new()
@@ -37,13 +47,4 @@ describe("Place") do
       expect(place.id()).to(eq(0))
     end
   end
-  # describe("#find") do
-  #   it("finds a place in the list array") do
-  #     place0 = Place.new()
-  #     place0.save()
-  #     place1 = Place.new()
-  #     place1.save()
-  #     expect(Place.find())
-  #   end
-  # end
 end

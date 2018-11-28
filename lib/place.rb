@@ -11,6 +11,9 @@ class Place
     @@list
   end
 
+  def self.find(id)
+  end
+
   def initialize()
     @id = @@next_id
     @@next_id += 1

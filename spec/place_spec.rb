@@ -9,10 +9,12 @@ describe("Place") do
     end
   end
 
-  # describe("#save") do
-  #   it("contains no content") do
-  #     expect(Place.save()).to(eq([]))
-  #   end
-  # end
+  describe("#save") do
+    it("saves new place to class array") do
+      place = Place.new()
+      place.save()
+      expect(Place.all()).to(eq([place]))
+    end
+  end
 
 end

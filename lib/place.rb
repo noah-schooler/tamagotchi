@@ -4,4 +4,7 @@ class Place
   def self.all()
     @@list
   end
+
+  def save
+  end
 end

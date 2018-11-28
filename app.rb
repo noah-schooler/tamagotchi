@@ -10,6 +10,10 @@ get('/') do
 end
 
 post('/') do
+  city = params['city']
+  state = params['state']
+  place = Place.new(city, state)
+  place.save()
   @places = Place.all()
   erb(:index)
 end

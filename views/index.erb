@@ -1,9 +1,9 @@
 <h1>Places We've Been</h1>
-<ul>
+<ol>
 <% @places.each do |place| %>
-  <li><a href='cities/<%= place.id() %>'><%= place.city %>, <%= place.state %></a></li>
+  <li><a href='cities/<%= place.id() %>'><%= place.city %>, <%= place.state %></a> Rank=<%= place.rank %></li>
 <% end %>
-</ul>
+</ol>
 
 <h2>Add a new city</h2>
 <form action="/" method="post">

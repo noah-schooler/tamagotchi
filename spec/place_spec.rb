@@ -64,4 +64,27 @@ describe("Place") do
       expect(place.description).to(eq("The second best city in Texas"))
     end
   end
+
+  describe("#rank") do
+    it("returns the ranking of a city") do
+      place = Place.new("Houston", "Texas")
+      place.rank = 1
+      place.save()
+      expect(place.rank).to(eq(1))
+    end
+  end
+
+  describe(".order") do
+    it("adjusts ranks of cites based on user input") do
+      place1 = Place.new("Houston", "Texas")
+      place2 = Place.new("Seattle", "Washington")
+      place3 = Place.new("San Francisco", "California")
+      place1.save()
+      place2.save()
+      place3.save()
+      place2.rank = 1
+      Place.order
+      expect(Place.find_rank(2)).to(eq(place1))
+    end
+  end
 end

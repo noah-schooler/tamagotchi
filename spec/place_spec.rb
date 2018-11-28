@@ -47,4 +47,13 @@ describe("Place") do
       expect(place.id()).to(eq(0))
     end
   end
+
+  describe("#city") do
+    it("returns the name of a city") do
+      place = Place.new()
+      place.save()
+      place.city = "Houston"
+      expect(place.city).to(eq("Houston"))
+    end
+  end
 end

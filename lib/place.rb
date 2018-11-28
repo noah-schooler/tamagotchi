@@ -1,4 +1,5 @@
 class Place
+  attr_accessor (:city)
   @@list = []
   @@next_id = 0
 
@@ -22,6 +23,7 @@ class Place
   def initialize()
     @id = @@next_id
     @@next_id += 1
+    @city = ""
   end
 
   def save

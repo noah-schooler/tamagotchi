@@ -8,3 +8,8 @@ get('/') do
   @places = Place.all()
   erb(:index)
 end
+
+post('/') do
+  @places = Place.all()
+  erb(:index)
+end

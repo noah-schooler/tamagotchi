@@ -12,13 +12,15 @@ end
 post('/') do
   city = params['city']
   state = params['state']
+  description = params['description']
   place = Place.new(city, state)
+  place.description = description
   place.save()
   @places = Place.all()
   erb(:index)
 end
 
 get('/cities/:id') do
-  @thing = Place.find(params[:id].to_i)
+  @place = Place.find(params[:id].to_i)
   erb(:city)
 end

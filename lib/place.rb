@@ -40,16 +40,24 @@ class Place
   end
 
   def self.order(moved, new_rank)
+    moved.rank = new_rank + ((moved.rank > new_rank) ? -0.5 : 0.5)
+    @@list.sort! { |a,b| a.rank <=> b.rank}
+    @@list.each_with_index do |place, index|
+      place.rank = index + 1
+    end
+  end
+
+  def self.order1(moved, new_rank)
     old_rank = moved.rank
     if new_rank < old_rank
       @@list.each do |place|
-        if (place.rank < old_rank) && (place != moved)
+        if (place.rank < old_rank) && (place.rank >= new_rank) && (place != moved)
           place.rank += 1
         end
       end
     else
       @@list.each do |place|
-        if(place.rank <= new_rank) && (place != moved)
+        if(place.rank <= new_rank) && (place.rank > old_rank) && (place != moved)
           place.rank -= 1
         end
       end

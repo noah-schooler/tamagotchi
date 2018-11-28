@@ -19,9 +19,6 @@ post('/') do
 end
 
 get('/cities/:id') do
-  # place = Place.new("Houston", "Texas")
-  # place.description = "The second best city in Texas"
-  # place.save()
-  @place = Place.find(0)
+  @thing = Place.find(params[:id].to_i)
   erb(:city)
 end

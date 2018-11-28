@@ -1,7 +1,7 @@
 <h1>Places We've Been</h1>
 <ul>
 <% @places.each do |place| %>
-  <li><%= place.city %>, <%= place.state %> </li>
+  <li><a href='cities/<%= place.id() %>'><%= place.city %>, <%= place.state %></a></li>
 <% end %>
 </ul>
 

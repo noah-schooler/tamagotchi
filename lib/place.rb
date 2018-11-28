@@ -10,5 +10,6 @@ class Place
   end
 
   def self.clear
+    @@list = []
   end
 end

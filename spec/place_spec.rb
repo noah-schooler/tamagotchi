@@ -3,6 +3,10 @@ require('place')
 require ('pry')
 
 describe("Place") do
+  before() do
+    Place.clear()
+  end
+
   describe(".all") do
     it("is empty at first") do
       expect(Place.all()).to(eq([]))
@@ -25,5 +29,4 @@ describe("Place") do
       expect(Place.all()).to(eq([]))
     end
   end
-
 end
